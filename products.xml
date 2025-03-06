@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href = "products.css" ?>
+<products>
+    <product>
+        <name>Bootcut Jeans</name>
+        <description>Dark wash midrise bootcut jeans</description>
+        <price>50</price>
+        <categories>
+            <category>clothing</category>
+            <category>jeans</category>
+        </categories>
+    </product>
+
+    <product>
+        <name>Plain Baby Tee</name>
+        <description>Solid color white baby tee</description>
+        <price>20</price>
+        <categories>
+            <category>clothing</category>
+            <category>tops</category>
+        </categories>
+    </product>
+
+    <product>
+        <name>Leather Mini Skirt</name>
+        <description>Tight black leather mini skirt</description>
+        <price>30</price>
+        <categories>
+            <category>clothing</category>
+            <category>skirts</category>
+        </categories>
+    </product>
+
+    <product>
+        <name>Oversized Hoodie</name>
+        <description>Solid color black oversized hoodie</description>
+        <price>35</price>
+        <categories>
+            <category>clothing</category>
+            <category>jackets</category>
+        </categories>
+    </product>
+
+    <product>
+        <name>Gold Earrings Pack</name>
+        <description>Six pairs of gold earrings</description>
+        <price>10</price>
+        <categories>
+            <category>accessories</category>
+            <category>jewelry</category>
+        </categories>
+    </product>
+
+    <product>
+        <name>Rectangle Claw Clip</name>
+        <description>Clear rectangular claw clip</description>
+        <price>5</price>
+        <categories>
+            <category>accessories</category>
+            <category>hair</category>
+        </categories>
+    </product>
+
+    <product>
+        <name>Linen Pants</name>
+        <description>Low rise drawstring white linen pants</description>
+        <price>40</price>
+        <categories>
+            <category>clothing</category>
+            <category>trousers</category>
+        </categories>
+    </product>
+
+    <product>
+        <name>Bow Hair Clip</name>
+        <description>Pink satin bow hair clip</description>
+        <price>10</price>
+        <categories>
+            <category>clothing</category>
+            <category>jeans</category>
+        </categories>
+    </product>
+</products>

@@ -1,0 +1,45 @@
+products {
+    font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    background-color: #ffbbe1;
+    color: black;
+}
+
+products product {
+    background-color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 16px;
+}
+
+products product:hover {
+    background-color:#ffa7d9;
+    color:white;
+}
+
+products product name {
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+products product price:before {
+    content: "$";
+}
+
+products product category {
+    font-style: italic;
+}
+
+products product categories category:first-child:before {
+    content: "Tagged: ";
+}
+
+products product categories category:after {
+    content: ";";
+}
+
+products product categories category:last-child:after {
+    content: " ";
+}

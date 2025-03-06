@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products JSON</title>
+</head>
+
+<body>
+    <script>
+        products = {
+            "products": [
+                {
+                    "name": "Bootcut Jeans",
+                    "description": "Dark wash midrise bootcut jeans",
+                    "price": 50,
+                    "categories": ["clothing", "jeans"]
+                },
+
+                {
+                    "name": "Plain Baby Tee",
+                    "description": "Solid color white baby tee",
+                    "price": 20,
+                    "categories": ["clothing", "tops"]
+                },
+
+                {
+                    "name": "Leather Mini Skirt",
+                    "description": "Tight black leather mini skirt",
+                    "price": 30,
+                    "categories": ["clothing", "skirts"]
+                },
+
+                {
+                    "name": "Oversized Hoodie",
+                    "description": "Solid color black oversized hoodie",
+                    "price": 35,
+                    "categories": ["clothing", "jackets"]
+                },
+
+                {
+                    "name": "Gold Earrings Pack",
+                    "description": "Six pairs of gold earrings",
+                    "price": 10,
+                    "categories": ["accessories", "jewelry"]
+                },
+
+                {
+                    "name": "Rectangle Claw Clip",
+                    "description": "Clear rectangular claw clip",
+                    "price": 5,
+                    "categories": ["accessories", "hair"]
+                },
+
+                {
+                    "name": "Linen Pants",
+                    "description": "Low rise drawstring white linen pants",
+                    "price": 40,
+                    "categories": ["clothing", "trousers"]
+                },
+
+                {
+                    "name": "Bow Hair Clip",
+                    "description": "Pink satin bow hair clip",
+                    "price": 10,
+                    "categories": ["clothing", "jeans"]
+                }
+            ]
+        }
+            
+        productsString = JSON.stringify(products);
+
+        document.write(productsString);
+    </script>
+</body>
+</html>
