@@ -1,0 +1,27 @@
+All code files uploaded to canvas (xml/html/css/json) – you may use a zip file
+
+URL of products.xml online
+    sparek01.github.io/cs20-hw5/products.xml
+URL for products_json.html
+    sparek01.github.io/cs20-hw5/products.json
+URL of products1.html online
+    sparek01.github.io/cs20-hw5/products1.html
+URL of products2.html online
+    sparek01.github.io/cs20-hw5/products2.html
+URL of products3.html online
+    sparek01.github.io/cs20-hw5/products3.html
+
+Answers to questions
+1. Discuss a case study for using a technology such as XML or JSON.
+    XML or JSON are useful laguages when dealing with the creation of databases.
+    They are used for transferring data between a server and a web application.
+
+2. Which do you prefer: XML or JSON? And why?
+    I prefer XML because the syntax feels more intuitive because it is quite
+    similar to HTML. However I also like JSON because it is much cleaner to look
+    at.
+
+3. What was the most interesting part of this assignment?
+    I liked writing the JSON file because it was a new experience for me. It was
+    interesting to see it all come together when the file is linked within the
+    HTML.

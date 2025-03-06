@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+    <meta name='viewport' content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+        html, body {
+            background-color: #ffbbe1;
+            font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+        }
+
+        p {
+            margin: 0px;
+        }
+
+        .products {
+            color: black;
+        }
+
+        .product {
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin: 16px;
+        }
+
+        .product:hover {
+            background-color:#ffa7d9;
+            color:white;
+        }
+
+        .name {
+            color: black;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .categories {
+            font-style: italic;
+        }
+
+        .categories:first-child:before {
+            content: "Tagged: ";
+        }
+
+        .categories:last-child:after {
+            content: " ";
+        }
+    </style>
+</head>
+<body>
+    <div class="result" id="result"></div>
+
+    <script>
+        // load products when the button is clicked
+        $(document).ready(function () {
+            $('#showProducts').click(function () {
+                $(this).hide(); // hide button
+
+                // link to get the products list from online
+                $.get('https://sparek01.github.io/cs20-hw5/products.json', function (data) {
+                    console.log(data);
+                    let resultHTML = "";
+
+                    // loop through each product to get the html
+                    data.products.forEach(function (product) {
+                        resultHTML += `
+                            <div class="product">
+                                <p class="name">${product.name}</p>
+                                </br>
+                                <p class="description">${product.description}</p>
+                                </br>
+                                <p class="price">Price: $${product.price}</p>
+                                </br>
+                                <p class="categories">Tagged: ${product.categories.join('; ')}</p>
+                            </div>
+                        `;
+                    });
+                    // add the products to the result
+                    document.getElementById("result").innerHTML = resultHTML;
+                });
+            });
+        });
+    </script>
+
+    <input type="button" id="showProducts" value="Show Products"/>
+</body>
+</html>

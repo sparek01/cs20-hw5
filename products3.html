@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+    <meta name='viewport' content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <style type="text/css">
+        html, body {
+            background-color: #ffbbe1;
+            font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+        }
+
+        p {
+            margin: 0px;
+        }
+
+        .products {
+            color: black;
+        }
+
+        .product {
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            margin: 16px;
+        }
+
+        .product:hover {
+            background-color:#ffa7d9;
+            color:white;
+        }
+
+        .name {
+            color: black;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .categories {
+            font-style: italic;
+        }
+
+        .categories:first-child:before {
+            content: "Tagged: ";
+        }
+
+        .categories:last-child:after {
+            content: " ";
+        }
+
+        .filterSection {
+            margin: 20px 0;
+        }
+
+        select, button {
+            font-size: 16px;
+        }
+
+        .result p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" id="showProducts" value="Show Products"/>
+
+    <!-- filter section -->
+    <div id="filterSection" style="display:none;">
+        <select id="categorySelect">
+            <option value="">Select Category</option>
+        </select>
+        <button id="filterButton">Filter</button>
+    </div>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        $(document).ready(function () {
+            let allProducts = [];
+
+            // load products when the button is clicked
+            $('#showProducts').click(function () {
+                $(this).hide();  // hide button
+                $('#filterSection').show();  // show filter
+
+                // link to get the products list from online
+                $.get('https://sparek01.github.io/cs20-hw5/products.json', function (data) {
+                    allProducts = data.products;
+                    let categories = [];
+
+                    // loop through all products to get unique categories
+                    allProducts.forEach(function (product) {
+                        product.categories.forEach(function (category) {
+                            if (!categories.includes(category)) {
+                                categories.push(category);
+                            }
+                        });
+                    });
+
+                    // fill the dropdown with these categories
+                    categories.forEach(function (category) {
+                        $('#categorySelect').append('<option value="' + category + '">' + category + '</option>');
+                    });
+
+                    // display all products at first
+                    displayProducts(allProducts);
+                });
+            });
+
+            // loop through all products to get the html
+            function displayProducts(products) {
+                let resultHTML = "";
+                products.forEach(function (product) {
+                    resultHTML += `
+                        <div class="product">
+                            <p class="name">${product.name}</p>
+                            <p class="description">${product.description}</p>
+                            <p class="price">Price: $${product.price}</p>
+                            <p class="categories">Tagged: ${product.categories.join('; ')}</p>
+                        </div>
+                    `;
+                });
+                $('#result').html(resultHTML);
+            }
+
+            // filter products based on category
+            $('#filterButton').click(function () {
+                let selectedCategory = $('#categorySelect').val();
+                let filteredProducts = [];
+
+                if (selectedCategory) {
+                    // filter the products based on the selected category
+                    filteredProducts = allProducts.filter(function (product) {
+                        return product.categories.includes(selectedCategory);
+                    });
+                } else {
+                    filteredProducts = allProducts; // show all if no category is selected
+                }
+
+                // display the filtered products
+                displayProducts(filteredProducts);
+            });
+        });
+    </script>
+</body>
+</html>
